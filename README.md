@@ -27,9 +27,9 @@ Data cleaning, data analysis, model building, and model analysis was compeleted 
 Before jumping into model analysis, its useful to understand the distribution of character lines in the Seinfeld transcripts
 Jerry has the most lines followed by George, Elaine, and Kramer.
 
-![characterdistribution](https://raw.githubusercontent.com/Victor-Denisov/Seinfield-Transcripts-NLP/blob/main/images/character_lines_distribution.png "Character Distribution")
+![characterdistribution](https://raw.githubusercontent.com/Victor-Denisov/Seinfield-Transcripts-NLP/blob/main/images/character_lines_distribution.PNG "Character Distribution")
 
-#### Naive Bayes
+#### Naive Bayes Model
 
 Naive bayes is a supervised learning algorithm that uses probabilistic classification (via Bayes' theorem) to predict an outcome
 
@@ -45,16 +45,16 @@ The diagonal that aligns with characters on each axis represents a correct predi
 
 We can identify that the model primarily predicts jerry for all characters as its a safe bet - jerry has the most lines out of all characters
 
-![cf nb](https://raw.githubusercontent.com/Victor-Denisov/Seinfield-Transcripts-NLP/blob/main/images/cf_nb.png "Confusion Matrix - NB")
+![cf nb](https://raw.githubusercontent.com/Victor-Denisov/Seinfield-Transcripts-NLP/blob/main/images/cf_nb.PNG "Confusion Matrix - NB")
 
 A receiver operating characteristic (ROC) curve describes performance of a classification model by graphing true positive rate vs false positive rate
 
 It is interesting to note that Kramer is above all other characters in the ROC, which could mean that Naive Bayes can identify
 Kramer's lines the best out of all characters (TPR vs. FPR)
 
-![roc nb](https://raw.githubusercontent.com/Victor-Denisov/Seinfield-Transcripts-NLP/blob/main/images/roc_nb.png "ROC - NB")
+![roc nb](https://raw.githubusercontent.com/Victor-Denisov/Seinfield-Transcripts-NLP/blob/main/images/roc_nb.PNG "ROC - NB")
 
-#### DistilBERT
+#### DistilBERT Model
 
 Bidirectional Encoder Representations from Transformers (BERT) is a transformer-based machine learning technique for natural language processing (NLP) developed by Google.
 [DistilBERT](https://huggingface.co/transformers/model_doc/distilbert.html) is a "distilled" version of a BERT model that retains 97% of its language understanding capabilities, while being 60% faster but with 40% less parameters 
@@ -62,14 +62,14 @@ Bidirectional Encoder Representations from Transformers (BERT) is a transformer-
 DistilBERT (dBERT) was able to predict with 74% accuracy, which is 36% higher than the baseline accuracy of 37% (always predicting Jerry)
 Compared to Naive Bayes, dBERT is able to predict with significantly better precision as when we analyze Jerry, recall remains high but precision is much higher than before
 
-![dbert details](https://github.com/Victor-Denisov/Seinfield-Transcripts-NLP/blob/main/images/detail_dbert.png "dbert Details")
+![dbert details](https://github.com/Victor-Denisov/Seinfield-Transcripts-NLP/blob/main/images/detail_dbert.PNG "dbert Details")
 
 The confusion matrix for dBERT proves the model's good performance as the predictions align closely to the true value
 
-![cf dbert](https://github.com/Victor-Denisov/Seinfield-Transcripts-NLP/blob/main/images/cf_dbert.png "Confusion Matrix - distilBERT")
+![cf dbert](https://github.com/Victor-Denisov/Seinfield-Transcripts-NLP/blob/main/images/cf_dbert.PNG "Confusion Matrix - distilBERT")
 
 The ROC for dBERT is 0.9 which indicates strong performance as well. If we compare again to Naive Bayes, its interesting to see the same pattern
 of Kramer's line being above other characters. Kramer has the highest precision but lowest recall of the characters, which could mean that the
 model is able to identify kramer's lines the best from other characters. Kramer also had the least number of lines, which could also be an attributing factor.
 
-![roc dbert](https://github.com/Victor-Denisov/Seinfield-Transcripts-NLP/blob/main/images/roc_dbert.png "ROC - distilBERT")
+![roc dbert](https://github.com/Victor-Denisov/Seinfield-Transcripts-NLP/blob/main/images/roc_dbert.PNG "ROC - distilBERT")
