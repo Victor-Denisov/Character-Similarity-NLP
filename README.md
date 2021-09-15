@@ -27,7 +27,7 @@ Data cleaning, data analysis, model building, and model analysis was compeleted 
 Before jumping into model analysis, its useful to understand the distribution of character lines in the Seinfeld transcripts
 Jerry has the most lines followed by George, Elaine, and Kramer.
 
-![characterdistribution](https://raw.githubusercontent.com/Victor-Denisov/Seinfield-Transcripts-NLP/blob/main/images/character_lines_distribution.PNG "Character Distribution")
+![characterdistribution](https://github.com/Victor-Denisov/Seinfield-Transcripts-NLP/blob/main/images/character_lines_distribution.PNG "Character Distribution")
 
 #### Naive Bayes Model
 
@@ -37,7 +37,7 @@ The model was able to predict with 42% accuracy, which is 4% higher than the bas
 Its also interesting to note the recall for jerry is fairly high at 0.91 with low prevision 0.41, meaning that it believes many lines belong to Jerry
 (unsurprisingly as he is a writer on the show).
 
-![detailNB](https://raw.githubusercontent.com/Victor-Denisov/Seinfield-Transcripts-NLP/blob/main/images/detail_nb.PNG "NB Details")
+![detailNB](https://github.com/Victor-Denisov/Seinfield-Transcripts-NLP/blob/main/images/detail_nb.PNG "NB Details")
 
 The confusion matrix below describes the performance of Naive Bayes, comparing the predicted values to the true value. 
 The diagonal that aligns with characters on each axis represents a correct prediction ([elaine,elaine] = 140) and the rest being incorrect
@@ -45,14 +45,14 @@ The diagonal that aligns with characters on each axis represents a correct predi
 
 We can identify that the model primarily predicts jerry for all characters as its a safe bet - jerry has the most lines out of all characters
 
-![cf nb](https://raw.githubusercontent.com/Victor-Denisov/Seinfield-Transcripts-NLP/blob/main/images/cf_nb.PNG "Confusion Matrix - NB")
+![cf nb](https://github.com/Victor-Denisov/Seinfield-Transcripts-NLP/blob/main/images/cf_nb.PNG "Confusion Matrix - NB")
 
 A receiver operating characteristic (ROC) curve describes performance of a classification model by graphing true positive rate vs false positive rate
 
 It is interesting to note that Kramer is above all other characters in the ROC, which could mean that Naive Bayes can identify
 Kramer's lines the best out of all characters (TPR vs. FPR)
 
-![roc nb](https://raw.githubusercontent.com/Victor-Denisov/Seinfield-Transcripts-NLP/blob/main/images/roc_nb.PNG "ROC - NB")
+![roc nb](https://github.com/Victor-Denisov/Seinfield-Transcripts-NLP/blob/main/images/roc_nb.PNG "ROC - NB")
 
 #### DistilBERT Model
 
